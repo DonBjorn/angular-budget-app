@@ -1,4 +1,9 @@
-<app-header></app-header>
+<app-header
+  [budgetTotal]="getBudgetTotal()"
+  [entryTotal]="getEntriesTotal()"
+  [expenseTotal]="getExpensesTotal()"
+  [percentageTotal]="getPercentageTotal()"
+></app-header>
 <app-form></app-form>
 
 <div class="contenedor limpiarEstilos">
