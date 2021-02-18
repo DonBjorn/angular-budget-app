@@ -8,6 +8,7 @@ import { ExpenseComponent } from './expense/expense.component';
 import { FormComponent } from './form/form.component';
 import {EntryService} from "./entry/entry.service";
 import {ExpenseService} from "./expense/expense.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {ExpenseService} from "./expense/expense.service";
     FormComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [EntryService, ExpenseService],
   bootstrap: [AppComponent]

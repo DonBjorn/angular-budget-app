@@ -42,6 +42,6 @@ export class AppComponent {
   }
 
   getBudgetTotal(): number{
-    return this.getEntriesTotal() - this.getEntriesTotal();
+    return this.getEntriesTotal() - this.getExpensesTotal();
   }
 }

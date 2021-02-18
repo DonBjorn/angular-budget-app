@@ -4,12 +4,12 @@
       Presupuesto Disponible:
     </div>
 
-    <div class="presupuesto_valor">{{ budgetTotal }}</div>
+    <div class="presupuesto_valor">{{ budgetTotal | currency:'MNX': '$' : '1.2-2'}}</div>
 
     <div class="presupuesto_ingreso limpiarEstilos">
       <div class="presupuesto_ingreso--texto">Ingresos</div>
       <div class="right">
-        <div class="presupuesto_ingreso--valor">{{ entryTotal }}</div>
+        <div class="presupuesto_ingreso--valor">{{ entryTotal | currency:'MNX': '$' : '1.2-2'}}</div>
         <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
       </div>
     </div>
@@ -17,8 +17,8 @@
     <div class="presupuesto_egreso limpiarEstilos">
       <div class="presupuesto_egreso--text">Egresos</div>
       <div class="right limpiarEstilos">
-        <div class="presupuesto_egreso--valor">- {{ expenseTotal }}</div>
-        <div class="presupuesto_egreso--porcentaje">{{ percentageTotal }}%</div>
+        <div class="presupuesto_egreso--valor">- {{ expenseTotal | currency:'MNX': '$' : '1.2-2' }}</div>
+        <div class="presupuesto_egreso--porcentaje">{{ percentageTotal | percent }}</div>
       </div>
     </div>
   </div>

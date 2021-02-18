@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ExpenseModel} from "./expense.model";
+import {ExpenseService} from "./expense.service";
 
 @Component({
   selector: 'app-expense',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expense.component.css']
 })
 export class ExpenseComponent implements OnInit {
+  expenses: ExpenseModel[] = [];
+  @Input() entriesTotal: number;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private expenseService: ExpenseService) {
   }
 
+  ngOnInit(): void {
+    this.expenses = this.expenseService.expenses;
+  }
+
+  calculatePercentage(expense: ExpenseModel): number{
+    return expense.value / this.entriesTotal;
+  }
+
+  delete(expense: ExpenseModel): void {
+    this.expenseService.delete(expense);
+  }
 }

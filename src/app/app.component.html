@@ -8,5 +8,7 @@
 
 <div class="contenedor limpiarEstilos">
   <app-entry></app-entry>
-  <app-expense></app-expense>
+  <app-expense
+    [entriesTotal]="getEntriesTotal()"
+  ></app-expense>
 </div>
